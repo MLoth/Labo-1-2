@@ -1,0 +1,50 @@
+[
+  {
+    "categoryName": "Appetizers",
+    "recipeNames": [
+      "Artichoke Stuffed Mushrooms",
+      "Buffalo Chicken Dip"
+    ],
+    "userInfo": null
+  },
+  {
+    "categoryName": "Soup",
+    "recipeNames": [
+      "Gazpacho"
+    ],
+    "userInfo": null
+  },
+  {
+    "categoryName": "Meat",
+    "recipeNames": [
+      "Chicken Fried Chicken",
+      "Savory Garlic Marinated Steaks"
+    ],
+    "userInfo": null
+  },
+  {
+    "categoryName": "Fisch",
+    "recipeNames": [
+      "Grilled Fish Steaks"
+    ],
+    "userInfo": null
+  },
+  {
+    "categoryName": "Vegetables",
+    "recipeNames": [],
+    "userInfo": null
+  },
+  {
+    "categoryName": "Dessert",
+    "recipeNames": [
+      "Desert Cake",
+      "Desert Crepes"
+    ],
+    "userInfo": null
+  },
+  {
+    "categoryName": "Starters",
+    "recipeNames": [],
+    "userInfo": null
+  }
+]

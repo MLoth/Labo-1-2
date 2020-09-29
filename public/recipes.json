@@ -1,0 +1,74 @@
+[
+  {
+    "id": "a16ba56e-9b09-4d7c-a0b9-12471afa7216",
+    "recipeName": "Desert Cake",
+    "recipeDescription": "A real English cake.",
+    "totalSecondsToPrepare": 9000,
+    "vegetarian": true,
+    "userInfo": null,
+    "categoryName": "Dessert"
+  },
+  {
+    "id": "1b04bfa8-0873-4fb1-bed3-1f477894e072",
+    "recipeName": "Desert Crepes",
+    "recipeDescription": "Essential crepe recipe. Sprinkle warm crepes with sugar and lemon, or serve with cream or ice cream and fruit.",
+    "totalSecondsToPrepare": 1200,
+    "vegetarian": true,
+    "userInfo": null,
+    "categoryName": "Dessert"
+  },
+  {
+    "id": "d0482db9-0c0e-4eb6-b676-1fe782f6bb24",
+    "recipeName": "Artichoke Stuffed Mushrooms",
+    "recipeDescription": "These mushrooms are a combination of my favorite things. They are a hit among all crowds. There are never any left!",
+    "totalSecondsToPrepare": 1500,
+    "vegetarian": true,
+    "userInfo": null,
+    "categoryName": "Appetizers"
+  },
+  {
+    "id": "2c523735-f832-467e-a685-29a57cb65f96",
+    "recipeName": "Grilled Fish Steaks",
+    "recipeDescription": "Make it with halibit. It's simple and delicious.",
+    "totalSecondsToPrepare": 5400,
+    "vegetarian": true,
+    "userInfo": null,
+    "categoryName": "Fisch"
+  },
+  {
+    "id": "e4d35bcb-76ef-45db-be69-3dab33ca94ab",
+    "recipeName": "Buffalo Chicken Dip",
+    "recipeDescription": "This tangy, creamy dip tastes just like Buffalo chicken wings. It's best served hot with crackers and celery sticks. Everyone loves the results!",
+    "totalSecondsToPrepare": 2700,
+    "vegetarian": true,
+    "userInfo": null,
+    "categoryName": "Appetizers"
+  },
+  {
+    "id": "1e1ad2da-34d8-4fc4-9d70-af799a21b3eb",
+    "recipeName": "Chicken Fried Chicken",
+    "recipeDescription": "A fun chicken recipe the kids can help prepare. They love crushing the crackers. It does not matter if the measurements aren't perfect, just wing it!",
+    "totalSecondsToPrepare": 2700,
+    "vegetarian": false,
+    "userInfo": null,
+    "categoryName": "Meat"
+  },
+  {
+    "id": "e7e64b16-d4c1-4176-8049-b1daacd276ca",
+    "recipeName": "Savory Garlic Marinated Steaks",
+    "recipeDescription": "This beautiful marinade adds an exquisite flavor to these already tender steaks. The final result will be so tender and juicy, it will melt in your mouth.",
+    "totalSecondsToPrepare": 84600,
+    "vegetarian": false,
+    "userInfo": null,
+    "categoryName": "Meat"
+  },
+  {
+    "id": "5084381c-a716-410a-9626-bbc912cec381",
+    "recipeName": "Gazpacho",
+    "recipeDescription": "The perfect hot-weather soup",
+    "totalSecondsToPrepare": 900,
+    "vegetarian": true,
+    "userInfo": null,
+    "categoryName": "Soup"
+  }
+]
