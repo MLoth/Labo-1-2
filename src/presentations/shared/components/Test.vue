@@ -8,21 +8,22 @@
     <button @click="login">
       Submit
     </button>
-    <p>Values: {{ state.username + " " + state.password }}</p>
+    <p>Values: {{ state.username + ' ' + state.password }}</p>
   </div>
 </template>
 <script>
-import { reactive, onMounted, computed } from "vue";
+import { reactive, onMounted, computed } from 'vue';
 
 export default {
   props: {
-    title: String
+    title: String,
   },
+
   setup(props, { emit }) {
     const state = reactive({
-      username: "",
-      password: "",
-      lowerCaseUsername: computed(() => state.username.toLowerCase())
+      username: '',
+      password: '',
+      lowerCaseUsername: computed(() => state.username.toLowerCase()),
     });
 
     onMounted(() => {
@@ -30,16 +31,16 @@ export default {
     });
 
     const login = () => {
-      emit("login", {
+      emit('login', {
         username: state.username,
-        password: state.password
+        password: state.password,
       });
     };
 
     return {
       login,
-      state
+      state,
     };
-  }
+  },
 };
 </script>

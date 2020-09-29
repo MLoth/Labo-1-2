@@ -10,6 +10,7 @@
             class="flex items-center justify-center w-12 h-12 rounded-full hover:shadow-md"
           >
             <!-- <plus-icon class="stroke-current text-orange-500"></plus-icon> -->
+            add
           </router-link>
         </div>
         <input
@@ -20,19 +21,28 @@
       </header>
 
       <div>
-        <router-link
-          :to="`/recipes/detail/13`"
-          class="flex items-center justify-between border-b border-gray-200 py-3 px-6 hover:bg-orange-200"
-        >
-          <div>
-            <h3 class="font-semibold ">Chicken soup</h3>
-            <p class="opacity-75">Can be hot</p>
-          </div>
-          <div>
-            <p class="text-right text-xs">Takes</p>
-            <p class="text-gray-600 text-right text-xs">20m</p>
-          </div>
-        </router-link>
+        <div v-if="state.recipes && state.recipes.length <= 0" class="px-6">
+          <p>No recipes</p>
+        </div>
+        <div v-else>
+          <router-link
+            v-for="recipe of state.recipes"
+            :key="recipe.id"
+            :to="`/recipes/detail/${recipe.id}`"
+            class="flex items-center justify-between border-b border-gray-200 py-3 px-6 hover:bg-orange-200"
+          >
+            <div>
+              <h3 class="font-semibold ">{{ recipe.recipeName }}</h3>
+              <p class="opacity-75">{{ recipe.recipeDescription }}</p>
+            </div>
+            <div>
+              <p class="text-right text-xs">Takes</p>
+              <p class="text-gray-600 text-right text-xs">
+                {{ recipe.totalSecondsToPrepare / 60 }}m
+              </p>
+            </div>
+          </router-link>
+        </div>
       </div>
     </div>
 
@@ -43,10 +53,26 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, reactive, onMounted } from 'vue';
+import api from '@/utils/api';
 // import { PlusIcon } from 'vue-feather-icons';
 
 export default defineComponent({
+  setup() {
+    const state = reactive({
+      recipes: null,
+    });
+
+    onMounted(async () => {
+      const data = await api.get('Recipes');
+      state.recipes = data;
+    });
+
+    return {
+      state,
+    };
+  },
+
   components: {
     // PlusIcon,
   },

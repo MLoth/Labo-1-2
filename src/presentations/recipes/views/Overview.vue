@@ -6,12 +6,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import api from '@/utils/api';
+// import api from '@/utils/api';
 
 export default defineComponent({
   setup() {
-    api.get('test');
-
     return {};
   },
 });
