@@ -20,22 +20,24 @@
       </header>
 
       <div>
-        <div class="px-6">
+        <div v-if="!state.recipes" class="px-6">
           <p>No recipes</p>
         </div>
-        <div>
+        <div v-else>
           <router-link
-            :to="`/recipes/detail/${12}`"
+            v-for="recipe of state.recipes"
+            :key="recipe.recipeName"
+            :to="`/recipes/detail/${recipe.id}`"
             class="flex items-center justify-between border-b border-gray-200 py-3 px-6 hover:bg-orange-200"
           >
             <div>
-              <h3 class="font-semibold ">Soep</h3>
-              <p class="opacity-75">Een lekker soepje.</p>
+              <h3 class="font-semibold ">{{ recipe.recipeName }}</h3>
+              <p class="opacity-75">{{ recipe.recipeDescription }}</p>
             </div>
             <div>
               <p class="text-right text-xs">Takes</p>
               <p class="text-gray-600 text-right text-xs">
-                45m
+                {{ recipe.totalSecondsToPrepare / 60 }}m
               </p>
             </div>
           </router-link>
@@ -50,11 +52,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, reactive } from 'vue';
+import { get } from '@/utils/api';
 
 export default defineComponent({
   setup() {
-    return {};
+    // WERKT MSS NIET.
+    const state = reactive({
+      recipes: null,
+    });
+
+    return {
+      state,
+    };
+  },
+
+  async created() {
+    const data = await get('Recipes');
+
+    this.state.recipes = data;
   },
 });
 </script>
