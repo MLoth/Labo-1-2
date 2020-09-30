@@ -12,7 +12,7 @@
       <li>
         <router-link
           to="/"
-          class="flex items-center justify-center w-12 h-12 rounded-full shadow-md mt-6 hover:opacity-75"
+          class="flex items-center justify-center w-12 h-12 text-orange-600 text-sm mt-6 hover:underline hover:opacity-75"
         >
           recipes
         </router-link>
@@ -20,7 +20,7 @@
       <li>
         <router-link
           to="/"
-          class="flex items-center justify-center w-12 h-12 rounded-full shadow-md mt-6 hover:opacity-75"
+          class="flex items-center justify-center w-12 h-12 text-orange-600 text-sm mt-6 hover:underline hover:opacity-75"
         >
           restaurants
         </router-link>
@@ -28,7 +28,7 @@
       <li>
         <router-link
           to="/"
-          class="flex items-center justify-center w-12 h-12 rounded-full shadow-md mt-6 hover:opacity-75"
+          class="flex items-center justify-center w-12 h-12 text-orange-600 text-sm mt-6 hover:underline hover:opacity-75"
         >
           saved
         </router-link>
