@@ -2,7 +2,10 @@
   <div class="py-6 px-16">
     <div class="flex justify-between">
       <div class="flex items-center">
-        <h1 v-if="state.recipe" class="text-4xl font-semibold text-gray-900">
+        <h1
+          v-if="state.recipe"
+          class="text-4xl font-semibold text-gray-900 leading-none"
+        >
           {{ state.recipe.recipeName }}
         </h1>
         <button
@@ -62,37 +65,38 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, reactive, watch } from 'vue';
+import router from '@/router'; // @ => src-map alias
+
 import { get } from '@/utils/api';
-import { reactive } from 'vue';
 
 export default defineComponent({
   setup() {
+    // State
     const state = reactive({
       recipe: null,
     });
+
+    // Functions
+    const getRecipe = async (id: string) => {
+      const data = await get(`Recipes/${id}`);
+      state.recipe = data;
+    };
+
+    // Route
+    watch(router.currentRoute, (to, from) => {
+      if (to.name != 'Detail') return;
+      getRecipe(to.params.id.toString());
+    });
+
+    // Get the current route once (first time)
+    getRecipe(router.currentRoute.value.params.id.toString());
+
+    // Return everything
     return {
       state,
+      getRecipe,
     };
-  },
-
-  async created() {
-    const id = this.$route.params.id;
-    this.getRecipe(id.toString());
-  },
-
-  watch: {
-    $route(to, from) {
-      this.getRecipe(to.params.id);
-    },
-  },
-
-  methods: {
-    async getRecipe(id: string) {
-      const data = await get(`Recipes/${id}`);
-      // this.state.recipe = data.find((recipe: any) => recipe.id == id); // Zelf de correcte er uit halen.
-      this.state.recipe = data; // Zelf de correcte er uit halen.
-    },
   },
 });
 </script>
