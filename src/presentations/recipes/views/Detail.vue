@@ -75,6 +75,7 @@ export default defineComponent({
     // State
     const state = reactive({
       recipe: null,
+      id: null,
     });
 
     // Functions

@@ -64,4 +64,17 @@ const router = createRouter({
   routes,
 });
 
+// Change meta data for each route
+// router.beforeEach((route) => {
+//   console.log({ route });
+//   if (route.name == 'Detail') {
+//     document.title = 'Dynamic';
+//     // document.querySelector('head link[rel="icon"]').href = '';
+//   } else {
+//     document.title = 'Lol 🙂';
+//   }
+
+//   console.log();
+// });
+
 export default router;

@@ -1,14 +1,16 @@
 <template>
-  <nav class="flex flex-col justify-between min-h-screen bg-white w-48">
+  <nav
+    class="flex flex-row lg:flex-col justify-between lg:min-h-screen bg-white lg:w-48 w-full"
+  >
     <router-link
       to="/"
-      class="self-start flex flex-col mx-auto p-4 mt-8 bg-orange-600 text-white leading-none uppercase font-bold rounded-lg shadow"
+      class="lg:self-start flex flex-col lg:mx-auto p-4 lg:mt-8 bg-orange-600 text-white leading-none uppercase font-bold rounded-lg shadow"
     >
       <span>Fo</span>
       <span>od</span>
     </router-link>
 
-    <ul class="self-center">
+    <ul class="flex lg:block lg:self-center">
       <li>
         <router-link
           to="/"

@@ -1,6 +1,6 @@
 <template>
-  <div class="flex">
-    <navigation></navigation>
+  <div class="lg:flex">
+    <Navigation />
     <router-view></router-view>
   </div>
 </template>

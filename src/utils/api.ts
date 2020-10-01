@@ -13,3 +13,17 @@ console.log(BACKEND_URL);
 export const get = (endpoint: string) => {
   return fetch(`${BACKEND_URL}/${endpoint}`).then((r) => r.json());
 };
+
+export const post = (endpoint: string, payload: object) => {
+  try {
+    return fetch(`${BACKEND_URL}/${endpoint}`, {
+      method: 'POST',
+      body: JSON.stringify(payload),
+      headers: {
+        'content-type': 'application/json',
+      },
+    });
+  } catch (error) {
+    return new Error(error);
+  }
+};
